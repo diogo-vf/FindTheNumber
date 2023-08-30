@@ -6,7 +6,7 @@ do
 {
     // Ask the username
     // Let user to choose to leave or start the game (if game != null restart instead of leave)
-    // Let User to choose Esay or Medium or Hard mode
+    // Let User to choose Easy or Medium or Hard mode
     //  - Easy: User has to found the number without limits of time or limits of try
     //  - Medium: User has to found the number without limits
     //  - Hard: User has to found the number
