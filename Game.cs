@@ -5,6 +5,7 @@ namespace FindTheNumber;
 
 public class Game
 {
+    private static Game? game;
     public int NumberToFind { get; private set; }
     public int? LastNumber { get; private set; }
 
@@ -14,19 +15,21 @@ public class Game
 
     private Game()
     {
-        NumberToFind = 0; //TODO create a random
+        Restart();
     }
 
     public static Game Start()
     {
-        Game game = new()
-        {
-            GameStatus = GameStatus.Started
-        };
+        Game.game = Game.game != null ? Game.game : new();
 
-        return game;
+        return Game.game;
     }
 
+    public void Restart()
+    {
+        GameStatus = GameStatus.Started;
+        NumberToFind = 0; //TODO create a random
+    }
     public void Stop()
     {
         GameStatus = GameStatus.Finished;
